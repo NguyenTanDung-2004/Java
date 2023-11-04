@@ -46,11 +46,6 @@ public class Controll2 implements MouseMotionListener, MouseListener {
     public void mousePressed(MouseEvent e) {
         
     }
-    public void updatexy(MouseEvent e)
-    {
-         x = e.getX();
-        y = e.getY();
-    }
     @Override
     public void mouseReleased(MouseEvent e) {
     }
