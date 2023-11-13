@@ -4,8 +4,10 @@
  */
 package School_Management;
 
+import School_Management.Controller.Load_First_Data;
 import School_Management.Custom_Table.ButtonEditor;
 import School_Management.Custom_Table.ButtonRenderer;
+import School_Management.Custom_Table.Dis_editable_table;
 import School_Management.Events_Controlls.Controll_JTextField;
 import School_Management.Custom_Table.HeaderRenderer;
 import School_Management.Student.Detail_Student;
@@ -29,6 +31,10 @@ import javax.swing.plaf.basic.BasicTableUI;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import School_Management.Teacher.Detail_Teacher;
+import java.util.ArrayList;
+import javax.swing.ListSelectionModel;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.DefaultTableCellRenderer;
 /**
  *
  * @author user
@@ -38,12 +44,19 @@ public class School_View extends javax.swing.JFrame {
     /**
      * Creates new form Dashboard_view
      */
+    DefaultTableModel tablemode;
+    DefaultTableModel teacher_model;
+    DefaultTableModel class_model;
+    DefaultTableModel subject_model;
     public School_View() {
+        setup_tableMode();
         initComponents();
         setup_icon();
         setup_for_JFrame();
         setup_Title_bar();
         add_Events();
+        setup_dis_editable_table();
+        load_data();
     }
     private void setup_for_JFrame()
     {
@@ -55,7 +68,25 @@ public class School_View extends javax.swing.JFrame {
                 
         this.setSize(1250, 500);
     }
-   
+    private void setup_dis_editable_table()
+    {
+
+         jTable4.setColumnSelectionAllowed(false); 
+        jTable4.setDefaultEditor(Object.class, new Dis_editable_table());
+        jTable3.setColumnSelectionAllowed(false);
+        jTable3.setDefaultEditor(Object.class, new Dis_editable_table());
+        jTable5.setColumnSelectionAllowed(false);
+        jTable5.setDefaultEditor(Object.class, new Dis_editable_table());
+        jTable6.setColumnSelectionAllowed(false);
+        jTable6.setDefaultEditor(Object.class, new Dis_editable_table());
+    }
+    private void setup_tableMode()
+    {
+        tablemode = new DefaultTableModel();
+        teacher_model = new DefaultTableModel();
+        class_model = new DefaultTableModel();
+        subject_model = new DefaultTableModel();
+    }
     private void setup_Title_bar()
     {
         setup_sacle("C:\\Users\\user\\Pictures\\icon\\icons8-minimize-48.png", jLabel21, 30, 30);
@@ -81,7 +112,35 @@ public class School_View extends javax.swing.JFrame {
         setup_sacle("C:\\Users\\user\\Pictures\\icon\\icons8-setting-50.png", jLabel10, 20, 20);
 
     }
-
+    public void load_data()
+    {
+        Load_First_Data obj = new Load_First_Data();
+        obj.connect_to_database();
+        ArrayList<String[]> obj1 = new ArrayList<>();
+        obj1 = obj.student_card_data;
+        for (int i = 0; i < obj1.size(); i++)
+        {
+            tablemode.addRow(obj1.get(i));
+        }
+        ArrayList<String[]> obj2 = new ArrayList<>();
+        obj2 = obj.teacher_card_data;
+        for (int i = 0; i < obj2.size(); i++)
+        {
+            teacher_model.addRow(obj2.get(i));
+        }
+        ArrayList<String[]> obj3 = new ArrayList<>();
+        obj3 = obj.class_card_data;
+        for (int i = 0; i < obj3.size(); i++)
+        {
+            class_model.addRow(obj3.get(i));
+        }
+        ArrayList<String[]> obj4 = new ArrayList<>();
+        obj4 = obj.subject_card_data;
+        for (int i = 0; i < obj4.size(); i++)
+        {
+            subject_model.addRow(obj4.get(i));
+        }
+    }
     public JButton getjButton14() {
         return jButton14;
     }
@@ -142,14 +201,10 @@ public class School_View extends javax.swing.JFrame {
     public static JTable getjTable4() {
         return jTable4;
     }
-    
     public void setup_for_Header_Table()
     {
         jTable4.getTableHeader().setDefaultRenderer(new HeaderRenderer(67, 97, 238));
-    }
-    public void add_Data()
-    {
-        
+        jTable3.getTableHeader().setDefaultRenderer(new HeaderRenderer(67, 97, 238));
     }
     public JLabel getjLabel21() {
         return jLabel21;
@@ -519,7 +574,7 @@ public class School_View extends javax.swing.JFrame {
         jPanel58.setPreferredSize(new java.awt.Dimension(400, 50));
         jPanel58.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 50, 5));
 
-        jTextField9.setText(" ID*");
+        jTextField9.setText("ID*");
         jTextField9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(2, 62, 138)));
         jTextField9.setPreferredSize(new java.awt.Dimension(100, 30));
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
@@ -529,12 +584,12 @@ public class School_View extends javax.swing.JFrame {
         });
         jPanel58.add(jTextField9);
 
-        jTextField1.setText(" Name*");
+        jTextField1.setText("Name*");
         jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(2, 62, 138)));
         jTextField1.setPreferredSize(new java.awt.Dimension(100, 30));
         jPanel58.add(jTextField1);
 
-        jTextField2.setText(" Class*");
+        jTextField2.setText("Class*");
         jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(2, 62, 138)));
         jTextField2.setPreferredSize(new java.awt.Dimension(100, 30));
         jPanel58.add(jTextField2);
@@ -548,8 +603,8 @@ public class School_View extends javax.swing.JFrame {
 
         jComboBox9.setBackground(new java.awt.Color(2, 62, 138));
         jComboBox9.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sorted following point", "Sorted following class", "Both", "Sorted following ID", "Filter", " " }));
-        jComboBox9.setSelectedIndex(4);
+        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sorted following point", "Both", "Sorted following ID", "Filter", " " }));
+        jComboBox9.setSelectedIndex(3);
         jComboBox9.setBorder(null);
         jComboBox9.setPreferredSize(new java.awt.Dimension(160, 30));
         jComboBox9.addActionListener(new java.awt.event.ActionListener() {
@@ -592,60 +647,17 @@ public class School_View extends javax.swing.JFrame {
 
         jPanel30.setLayout(new java.awt.BorderLayout());
 
-        jTable3.getTableHeader().setDefaultRenderer(new School_Management.Custom_Table.HeaderRenderer(67, 97, 238));
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "ID", "FullName", "Subject", "..."
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        jTable4.setModel(tablemode);
+        tablemode.addColumn("ID");
+        tablemode.addColumn("FullName");
+        tablemode.addColumn("Class");
+        tablemode.addColumn("...");
+        jTable4.getColumnModel().getColumn(3).setMaxWidth(30);
+        jTable4.setFocusable(false);
         jTable4.setGridColor(new java.awt.Color(255, 255, 255));
+        jTable4.setShowGrid(true);
         jScrollPane4.setViewportView(jTable4);
-        if (jTable4.getColumnModel().getColumnCount() > 0) {
-            jTable4.getColumnModel().getColumn(0).setPreferredWidth(50);
-            jTable4.getColumnModel().getColumn(3).setMinWidth(20);
-            jTable4.getColumnModel().getColumn(3).setPreferredWidth(20);
-            jTable4.getColumnModel().getColumn(3).setMaxWidth(50);
-        }
+        jTable4.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         if (jTable4.getColumnModel().getColumnCount() > 0)
         {
             jTable4.getColumnModel().getColumn(3).setCellRenderer(new ButtonRenderer());
@@ -866,53 +878,12 @@ public class School_View extends javax.swing.JFrame {
 
         jPanel39.setLayout(new java.awt.BorderLayout());
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "ID", "FullName", "Subject", "Detail"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        jTable3.setModel(teacher_model);
+        teacher_model.addColumn("ID");
+        teacher_model.addColumn("FullName");
+        teacher_model.addColumn("Subject");
+        teacher_model.addColumn("...");
+        jTable3.getColumnModel().getColumn(3).setMaxWidth(30);
         jTable3.setGridColor(new java.awt.Color(255, 255, 255));
         jScrollPane3.setViewportView(jTable3);
         if (jTable3.getColumnModel().getColumnCount() > 0) {
@@ -1147,53 +1118,12 @@ public class School_View extends javax.swing.JFrame {
         jPanel49.setLayout(new java.awt.BorderLayout());
 
         jTable5.getTableHeader().setDefaultRenderer(new HeaderRenderer(67, 97, 238));
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "ID", "FullName", "Number", "Detail"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        jTable5.setModel(class_model);
+        class_model.addColumn("ID");
+        class_model.addColumn("FullName");
+        class_model.addColumn("Number");
+        class_model.addColumn("...");
+        jTable5.getColumnModel().getColumn(3).setMaxWidth(30);
         jTable5.setGridColor(new java.awt.Color(255, 255, 255));
         jScrollPane5.setViewportView(jTable5);
         if (jTable5.getColumnModel().getColumnCount() > 0) {
@@ -1395,8 +1325,8 @@ public class School_View extends javax.swing.JFrame {
 
         jComboBox12.setBackground(new java.awt.Color(2, 62, 138));
         jComboBox12.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Social and political sciences", "Math", "IT", "Core course", "Different subjects", "Filter", " " }));
-        jComboBox12.setSelectedIndex(5);
+        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Social and science", "Math", "IT", "Filter", " " }));
+        jComboBox12.setSelectedIndex(3);
         jComboBox12.setBorder(null);
         jComboBox12.setPreferredSize(new java.awt.Dimension(160, 30));
         jComboBox12.addActionListener(new java.awt.event.ActionListener() {
@@ -1440,56 +1370,12 @@ public class School_View extends javax.swing.JFrame {
         jPanel84.setLayout(new java.awt.BorderLayout());
 
         jTable6.getTableHeader().setDefaultRenderer(new HeaderRenderer(67, 97, 238));
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "ID", "FullName", "Faculty"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        jTable6.setModel(subject_model);
+        subject_model.addColumn("ID");
+        subject_model.addColumn("FullName");
+        subject_model.addColumn("Faculty");
         jTable6.setGridColor(new java.awt.Color(255, 255, 255));
         jScrollPane6.setViewportView(jTable6);
-        if (jTable6.getColumnModel().getColumnCount() > 0) {
-            jTable6.getColumnModel().getColumn(0).setPreferredWidth(50);
-        }
 
         jPanel84.add(jScrollPane6, java.awt.BorderLayout.CENTER);
 
@@ -1968,7 +1854,8 @@ public class School_View extends javax.swing.JFrame {
     private javax.swing.JPanel student_card1;
     private javax.swing.JPanel student_card2;
     // End of variables declaration//GEN-END:variables
-    private DefaultTableModel model;
+
+    
     public JTextField getjTextField1() {
         return jTextField1;
     }

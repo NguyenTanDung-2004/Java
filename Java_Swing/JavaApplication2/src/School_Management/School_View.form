@@ -392,7 +392,7 @@
                                       <SubComponents>
                                         <Component class="javax.swing.JTextField" name="jTextField9">
                                           <Properties>
-                                            <Property name="text" type="java.lang.String" value=" ID*"/>
+                                            <Property name="text" type="java.lang.String" value="ID*"/>
                                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                                                 <LineBorder>
@@ -410,7 +410,7 @@
                                         </Component>
                                         <Component class="javax.swing.JTextField" name="jTextField1">
                                           <Properties>
-                                            <Property name="text" type="java.lang.String" value=" Name*"/>
+                                            <Property name="text" type="java.lang.String" value="Name*"/>
                                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                                                 <LineBorder>
@@ -425,7 +425,7 @@
                                         </Component>
                                         <Component class="javax.swing.JTextField" name="jTextField2">
                                           <Properties>
-                                            <Property name="text" type="java.lang.String" value=" Class*"/>
+                                            <Property name="text" type="java.lang.String" value="Class*"/>
                                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                                                 <LineBorder>
@@ -464,16 +464,15 @@
                                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                             </Property>
                                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                              <StringArray count="6">
+                                              <StringArray count="5">
                                                 <StringItem index="0" value="Sorted following point"/>
-                                                <StringItem index="1" value="Sorted following class"/>
-                                                <StringItem index="2" value="Both"/>
-                                                <StringItem index="3" value="Sorted following ID"/>
-                                                <StringItem index="4" value="Filter"/>
-                                                <StringItem index="5" value=" "/>
+                                                <StringItem index="1" value="Both"/>
+                                                <StringItem index="2" value="Sorted following ID"/>
+                                                <StringItem index="3" value="Filter"/>
+                                                <StringItem index="4" value=" "/>
                                               </StringArray>
                                             </Property>
-                                            <Property name="selectedIndex" type="int" value="4"/>
+                                            <Property name="selectedIndex" type="int" value="3"/>
                                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                               <Border info="null"/>
                                             </Property>
@@ -586,46 +585,22 @@
                                                   <SubComponents>
                                                     <Component class="javax.swing.JTable" name="jTable4">
                                                       <Properties>
-                                                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor" preCode="jTable3.getTableHeader().setDefaultRenderer(new School_Management.Custom_Table.HeaderRenderer(67, 97, 238));">
-                                                          <Table columnCount="4" rowCount="30">
-                                                            <Column editable="true" title="ID" type="java.lang.String"/>
-                                                            <Column editable="true" title="FullName" type="java.lang.String"/>
-                                                            <Column editable="true" title="Subject" type="java.lang.String"/>
-                                                            <Column editable="true" title="..." type="java.lang.String"/>
-                                                          </Table>
-                                                        </Property>
+                                                        <Property name="model" postCode="jTable4.getColumnModel().getColumn(3).setMaxWidth(30);"/>
                                                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor" postCode="if (jTable4.getColumnModel().getColumnCount() &gt; 0)&#xa;{&#xa;    jTable4.getColumnModel().getColumn(3).setCellRenderer(new ButtonRenderer());&#xa;jTable4.getColumnModel().getColumn(3).setCellEditor(new ButtonEditor(new JCheckBox()));&#xa;&#xa;}">
-                                                          <TableColumnModel selectionModel="0">
-                                                            <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="true">
-                                                              <Title/>
-                                                              <Editor/>
-                                                              <Renderer/>
-                                                            </Column>
-                                                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                                              <Title/>
-                                                              <Editor/>
-                                                              <Renderer/>
-                                                            </Column>
-                                                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                                              <Title/>
-                                                              <Editor/>
-                                                              <Renderer/>
-                                                            </Column>
-                                                            <Column maxWidth="50" minWidth="20" prefWidth="20" resizable="true">
-                                                              <Title/>
-                                                              <Editor/>
-                                                              <Renderer/>
-                                                            </Column>
-                                                          </TableColumnModel>
+                                                          <TableColumnModel selectionModel="3"/>
                                                         </Property>
+                                                        <Property name="focusable" type="boolean" value="false"/>
                                                         <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                                                           <Connection code="new java.awt.Color(255, 255, 255)" type="code"/>
                                                         </Property>
+                                                        <Property name="showGrid" type="boolean" value="true"/>
                                                         <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                                                           <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                                         </Property>
                                                       </Properties>
                                                       <AuxValues>
+                                                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTable()"/>
+                                                        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jTable4.setModel(tablemode);&#xa;tablemode.addColumn(&quot;ID&quot;);&#xa;tablemode.addColumn(&quot;FullName&quot;);&#xa;tablemode.addColumn(&quot;Class&quot;);&#xa;tablemode.addColumn(&quot;...&quot;);"/>
                                                         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
                                                       </AuxValues>
                                                     </Component>
@@ -1145,13 +1120,8 @@
                                                       <SubComponents>
                                                         <Component class="javax.swing.JTable" name="jTable3">
                                                           <Properties>
-                                                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                                              <Table columnCount="4" rowCount="32">
-                                                                <Column editable="true" title="ID" type="java.lang.String"/>
-                                                                <Column editable="true" title="FullName" type="java.lang.String"/>
-                                                                <Column editable="true" title="Subject" type="java.lang.String"/>
-                                                                <Column editable="true" title="Detail" type="java.lang.Object"/>
-                                                              </Table>
+                                                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="teacher_model.addColumn(&quot;ID&quot;);&#xa;teacher_model.addColumn(&quot;FullName&quot;);&#xa;teacher_model.addColumn(&quot;Subject&quot;);&#xa;teacher_model.addColumn(&quot;...&quot;);&#xa;jTable3.getColumnModel().getColumn(3).setMaxWidth(30);">
+                                                              <Connection code="teacher_model" type="code"/>
                                                             </Property>
                                                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor" postCode="if (jTable3.getColumnModel().getColumnCount() &gt; 0)&#xa;{&#xa;    jTable3.getColumnModel().getColumn(3).setCellRenderer(new ButtonRenderer());&#xa;      jTable3.getColumnModel().getColumn(3).setCellEditor(new ButtonEditor(new JCheckBox()));&#xa;}">
                                                               <TableColumnModel selectionModel="0">
@@ -1185,6 +1155,7 @@
                                                             </Property>
                                                           </Properties>
                                                           <AuxValues>
+                                                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTable()"/>
                                                             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="10"/>
                                                           </AuxValues>
                                                         </Component>
@@ -1718,13 +1689,8 @@
                                                       <SubComponents>
                                                         <Component class="javax.swing.JTable" name="jTable5">
                                                           <Properties>
-                                                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                                              <Table columnCount="4" rowCount="32">
-                                                                <Column editable="true" title="ID" type="java.lang.String"/>
-                                                                <Column editable="true" title="FullName" type="java.lang.String"/>
-                                                                <Column editable="true" title="Number" type="java.lang.String"/>
-                                                                <Column editable="true" title="Detail" type="java.lang.Object"/>
-                                                              </Table>
+                                                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="class_model.addColumn(&quot;ID&quot;);&#xa;class_model.addColumn(&quot;FullName&quot;);&#xa;class_model.addColumn(&quot;Number&quot;);&#xa;class_model.addColumn(&quot;...&quot;);&#xa;jTable5.getColumnModel().getColumn(3).setMaxWidth(30);">
+                                                              <Connection code="class_model" type="code"/>
                                                             </Property>
                                                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor" postCode="if (jTable5.getColumnModel().getColumnCount() &gt; 0)&#xa;{&#xa;jTable5.getTableHeader().getColumnModel().getColumn(3).setCellRenderer(new ButtonRenderer());&#xa;jTable5.getTableHeader().getColumnModel().getColumn(3).setCellEditor(new ButtonEditor(new JCheckBox()));&#xa;}">
                                                               <TableColumnModel selectionModel="0">
@@ -2204,17 +2170,15 @@
                                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                                             </Property>
                                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                                              <StringArray count="7">
-                                                <StringItem index="0" value="Social and political sciences"/>
+                                              <StringArray count="5">
+                                                <StringItem index="0" value="Social and science"/>
                                                 <StringItem index="1" value="Math"/>
                                                 <StringItem index="2" value="IT"/>
-                                                <StringItem index="3" value="Core course"/>
-                                                <StringItem index="4" value="Different subjects"/>
-                                                <StringItem index="5" value="Filter"/>
-                                                <StringItem index="6" value=" "/>
+                                                <StringItem index="3" value="Filter"/>
+                                                <StringItem index="4" value=" "/>
                                               </StringArray>
                                             </Property>
-                                            <Property name="selectedIndex" type="int" value="5"/>
+                                            <Property name="selectedIndex" type="int" value="3"/>
                                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                               <Border info="null"/>
                                             </Property>
@@ -2327,31 +2291,11 @@
                                                   <SubComponents>
                                                     <Component class="javax.swing.JTable" name="jTable6">
                                                       <Properties>
-                                                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                                          <Table columnCount="3" rowCount="30">
-                                                            <Column editable="true" title="ID" type="java.lang.String"/>
-                                                            <Column editable="true" title="FullName" type="java.lang.String"/>
-                                                            <Column editable="true" title="Faculty" type="java.lang.String"/>
-                                                          </Table>
+                                                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="subject_model.addColumn(&quot;ID&quot;);&#xa;subject_model.addColumn(&quot;FullName&quot;);&#xa;subject_model.addColumn(&quot;Faculty&quot;);">
+                                                          <Connection code="subject_model" type="code"/>
                                                         </Property>
                                                         <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                                                          <TableColumnModel selectionModel="0">
-                                                            <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="true">
-                                                              <Title/>
-                                                              <Editor/>
-                                                              <Renderer/>
-                                                            </Column>
-                                                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                                              <Title/>
-                                                              <Editor/>
-                                                              <Renderer/>
-                                                            </Column>
-                                                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                                                              <Title/>
-                                                              <Editor/>
-                                                              <Renderer/>
-                                                            </Column>
-                                                          </TableColumnModel>
+                                                          <TableColumnModel selectionModel="0"/>
                                                         </Property>
                                                         <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                                                           <Connection code="new java.awt.Color(255, 255, 255)" type="code"/>
