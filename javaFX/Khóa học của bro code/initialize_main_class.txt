@@ -1,0 +1,9 @@
+try {
+Parent root = FXMLLoader.load(getClass().getResource("/Main.fxml"));
+Scene scene = new Scene(root);
+primaryStage.setScene(scene);
+primaryStage.show();
+} catch (IOException e) {
+// TODO Auto-generated catch block
+e.printStackTrace();
+}

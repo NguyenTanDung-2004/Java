@@ -1,0 +1,10 @@
+chỉ có một hàm. (dòng code ở dưới thêm sự kiện exit(event) với event là thằng event ở đằng trước)
+this.button.setOnAction(event -> exit(event));
+
+có nhiều việc xử lý trong sử lí sự kiện.
+Đoạn code ở dưới thêm sự kiện cho nút tắt của stage và đối số đã được khai báo ở phía trên của chương trình không phải trong file này.
+primaryStage.setOnCloseRequest(event->
+            {
+                    System.out.println("nguyentandung"); 
+                    click_exit_button(primaryStage);
+            });

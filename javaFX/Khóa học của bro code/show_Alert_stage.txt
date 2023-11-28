@@ -1,0 +1,12 @@
+Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("text");
+        alert.setHeaderText("text");
+        alert.setContentText("test");
+        if(alert.showAndWait().get() == ButtonType.CLOSE)
+        {
+            System.out.println("nguyentandung");
+        }
+        else
+        {
+            System.out.println("hellop");
+        }

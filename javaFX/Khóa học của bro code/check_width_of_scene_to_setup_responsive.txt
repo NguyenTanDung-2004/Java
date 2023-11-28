@@ -1,0 +1,14 @@
+Scene scene = new Scene(root, 300, 250);
+scene.widthProperty().addListener(listener -> change_color(scene, btn));
+
+ public void change_color(Scene scene, Button btn)
+    {
+        if (scene.getWidth() < 200)
+        {
+            btn.setStyle("-fx-background-color: red");
+        }
+        else
+        {
+            btn.setStyle("-fx-background-color: blue");
+        }
+    }

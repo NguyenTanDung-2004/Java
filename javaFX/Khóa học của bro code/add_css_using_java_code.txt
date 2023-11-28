@@ -1,0 +1,1 @@
+ this.button.setStyle("-fx-font-size:50");
