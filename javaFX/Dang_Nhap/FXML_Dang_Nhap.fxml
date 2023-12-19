@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="Dang_Nhap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #161a1d;" stylesheets="@css.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Dang_Nhap.Controller_Dang_Nhap">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="316.0" style="-fx-background-color: 161a1d;" stylesheets="@css.css">
+         <children>
+            <Label id="Label_welcome" graphicTextGap="6.0" style="-fx-font-weight: bold;" stylesheets="@css.css" text="Welcome to Game Store" textAlignment="CENTER">
+               <font>
+                  <Font name="Cambria Italic" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <ImageView id="ImageView_BackGround_Dang_Nhap" fitHeight="144.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/Image_Background_Dang_Nhap.png" />
+               </image>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ImageView>
+         </children>
+      </VBox>
+      <ImageView fitHeight="82.0" fitWidth="172.0" layoutX="316.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/Image_Logo.png" />
+         </image>
+      </ImageView>
+      <BorderPane layoutX="336.0" layoutY="87.0" prefHeight="285.0" prefWidth="247.0">
+         <top>
+            <FlowPane prefHeight="27.0" prefWidth="247.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="185.0" style="-fx-font-style: bold;" text="Sign in to continue." textFill="#4d908e">
+                     <font>
+                        <Font name="Tahoma" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+         </top>
+         <center>
+            <FlowPane prefHeight="207.0" prefWidth="247.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="32.0" prefWidth="182.0" style="-fx-padding: 5; -fx-font-style: italic;" text="Account" textFill="WHITE" />
+                  <TextField fx:id="account" prefHeight="23.0" prefWidth="155.0" style="-fx-padding: 5;" />
+                  <Label prefHeight="21.0" prefWidth="151.0" style="-fx-padding: 5; -fx-font-style: italic;" text="Password" textFill="WHITE" />
+                  <PasswordField fx:id="Password" prefHeight="28.0" prefWidth="155.0" />
+                  <Label fx:id="lb_account_password_wrong" prefHeight="27.0" prefWidth="209.0" text="Your accout or password is wrong" textFill="RED" />
+                  <Label fx:id="lb_forgotpassword" prefHeight="30.0" prefWidth="190.0" style="-fx-cursor: hand; -fx-font-style: italic;" text="Forgot Password!" textFill="WHITE" underline="true" />
+                  <Button fx:id="btn_login" mnemonicParsing="false" prefHeight="27.0" prefWidth="157.0" style="-fx-background-color: #4d908e; -fx-background-radius: 20; -fx-cursor: hand;" text="Login" textFill="#e7ecef">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </FlowPane>
+         </center>
+         <bottom>
+            <FlowPane prefHeight="29.0" prefWidth="247.0" style="-fx-alignment: center;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label id="Lable_create_a_new_Account" fx:id="lb_Create_account" prefHeight="15.0" prefWidth="247.0" style="-fx-cursor: hand; -fx-font-weight: 600;" text="Create a new Account." textFill="#4d908e" underline="true">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

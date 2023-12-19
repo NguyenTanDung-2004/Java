@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorpane_chua_tat_ca" minHeight="500.0" minWidth="780.0" prefHeight="476.0" prefWidth="780.0" style="-fx-background-color: #161a1d;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vao_Game_Store.Controller_Vao_Game">
+   <children>
+      <BorderPane layoutX="279.0" layoutY="138.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <BorderPane prefHeight="69.0" prefWidth="780.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+               <top>
+                  <BorderPane prefHeight="13.0" prefWidth="780.0" BorderPane.alignment="CENTER" />
+               </top>
+               <center>
+                  <FlowPane prefHeight="35.0" prefWidth="780.0" style="-fx-background-color: black; -fx-background-radius: 30;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label fx:id="lb_o_tren_thanh_cong_cu" prefHeight="17.0" prefWidth="781.0" />
+                        <Label prefHeight="17.0" prefWidth="25.0" />
+                        <ImageView fitHeight="25.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                           <image>
+                              <Image url="@../Image/Image_icon_search.png" />
+                           </image>
+                        </ImageView>
+                        <TextField id="TextField_Search_Game" fx:id="tf_search" prefWidth="149.0" promptText="Search game" style="-fx-background-radius: 20; -fx-background-color: #343a40; -fx-fon: black;" stylesheets="@css.css" />
+                        <Label prefHeight="17.0" prefWidth="22.0" />
+                        <Label id="lb_Game_Store" fx:id="lb_GameStore" style="-fx-cursor: hand;" text="GameStore" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="22.0" />
+                        <Label id="lb_inventory" fx:id="lb_inventory" style="-fx-cursor: hand;" text="Inventory" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="22.0" />
+                        <Label fx:id="lb_thay_doi_welcome" prefHeight="17.0" prefWidth="187.0" />
+                        <Label text="Welcome to" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="29.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Image/Image_Logo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </FlowPane>
+               </center>
+            </BorderPane>
+         </top>
+         <left>
+            <BorderPane prefHeight="407.0" prefWidth="66.0" BorderPane.alignment="CENTER" />
+         </left>
+         <center>
+            <StackPane fx:id="stackPane_chua_BorderPane_chua_game_video" style="-fx-background-color: #161a1d;">
+               <children>
+                  <BorderPane fx:id="BorderPane_chua_game_video" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #161a1d;">
+                     <top>
+                        <MediaView fx:id="MediaView_chua_video" fitHeight="200.0" fitWidth="200.0" BorderPane.alignment="CENTER" />
+                     </top>
+                     <center>
+                        <BorderPane BorderPane.alignment="CENTER">
+                           <center>
+                              <StackPane>
+                                 <children>
+                                    <FlowPane fx:id="Flow_chua_game_trong_GameStore" prefHeight="66.0" prefWidth="715.0" />
+                                    <FlowPane fx:id="flowpane_search_game" prefHeight="200.0" prefWidth="200.0" />
+                                 </children>
+                              </StackPane>
+                           </center>
+                           <top>
+                              <BorderPane prefHeight="117.0" prefWidth="715.0" BorderPane.alignment="CENTER">
+                                 <left>
+                                    <BorderPane BorderPane.alignment="CENTER">
+                                       <center>
+                                          <Label prefHeight="67.0" prefWidth="222.0" style="-fx-background-color: #0077b6; -fx-background-radius: 30;" text="Games In Store:" textFill="WHITE">
+                                             <font>
+                                                <Font size="30.0" />
+                                             </font>
+                                          </Label>
+                                       </center>
+                                    </BorderPane>
+                                 </left>
+                                 <bottom>
+                                    <BorderPane prefHeight="29.0" prefWidth="745.0" BorderPane.alignment="CENTER">
+                                       <center>
+                                          <Line endX="100.0" startX="-642.874267578125" startY="0.4595293402671814" stroke="WHITE" BorderPane.alignment="CENTER" />
+                                       </center>
+                                    </BorderPane>
+                                 </bottom>
+                                 <center>
+                                    <BorderPane prefHeight="74.0" prefWidth="493.0" BorderPane.alignment="CENTER" />
+                                 </center>
+                              </BorderPane>
+                           </top>
+                        </BorderPane>
+                     </center>
+                  </BorderPane>
+                  <BorderPane fx:id="borderpane_inventory" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #161a1d;" visible="false">
+                     <top>
+                        <BorderPane prefHeight="95.0" prefWidth="715.0" BorderPane.alignment="CENTER">
+                           <center>
+                              <BorderPane prefHeight="95.0" prefWidth="168.0" BorderPane.alignment="CENTER">
+                                 <left>
+                                    <BorderPane prefHeight="95.0" prefWidth="323.0" BorderPane.alignment="CENTER">
+                                       <center>
+                                          <Label fx:id="Inventory_Name" prefHeight="88.0" prefWidth="320.0" style="-fx-alignment: center;" text="My Inventory" textFill="WHITE" BorderPane.alignment="CENTER">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </center>
+                                    </BorderPane>
+                                 </left>
+                                 <right>
+                                    <BorderPane prefHeight="95.0" prefWidth="248.0" BorderPane.alignment="CENTER">
+                                       <center>
+                                          <Label fx:id="lb_Number_game" prefHeight="97.0" prefWidth="251.0" text="Number of game:" textFill="WHITE" BorderPane.alignment="CENTER">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </center>
+                                    </BorderPane>
+                                 </right></BorderPane>
+                           </center>
+                        </BorderPane>
+                     </top>
+                     <center>
+                        <BorderPane fx:id="Inventory_chua_game" prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <StackPane fx:id="stackpane_contain_AnchoPane_contain_list_Game_in_Inventory">
+                                 <children>
+                                    <AnchorPane fx:id="AnchoPane_contain_list_Game_in_Inventory" style="-fx-background-color: #161a1d;">
+                                       <children>
+                                          <FlowPane fx:id="flow123">
+                                             <children>
+                                                <BorderPane fx:id="One_Game_in_Inventory" maxHeight="143.0" prefHeight="143.0" prefWidth="364.0" style="-fx-background-radius: 20; -fx-background-color: #343a40; -fx-border-radius: 50;">
+                                                   <right>
+                                                      <BorderPane fx:id="border9" prefHeight="143.0" prefWidth="60.0" BorderPane.alignment="CENTER">
+                                                         <center>
+                                                            <BorderPane fx:id="border10" prefHeight="143.0" prefWidth="44.0" BorderPane.alignment="CENTER">
+                                                               <bottom>
+                                                                  <BorderPane fx:id="border13" prefHeight="78.0" prefWidth="60.0" BorderPane.alignment="CENTER">
+                                                                     <center>
+                                                                        <ImageView fx:id="imgv14" fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                                                                           <image>
+                                                                              <Image url="@../Image/Image_close.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </center>
+                                                                  </BorderPane>
+                                                               </bottom>
+                                                               <center>
+                                                                  <BorderPane fx:id="border11" prefHeight="84.0" prefWidth="60.0" BorderPane.alignment="CENTER">
+                                                                     <center>
+                                                                        <ImageView fx:id="ImageV12" fitHeight="55.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                                                                           <image>
+                                                                              <Image url="@../Image/Image_Play.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                     </center>
+                                                                  </BorderPane>
+                                                               </center>
+                                                            </BorderPane>
+                                                         </center>
+                                                      </BorderPane>
+                                                   </right>
+                                                   <left>
+                                                      <VBox fx:id="VBox_1" prefHeight="210.0" prefWidth="196.0" BorderPane.alignment="CENTER">
+                                                         <children>
+                                                            <ImageView fx:id="ImageView_2" fitHeight="116.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 30;">
+                                                               <image>
+                                                                  <Image url="@../Image_Game/DRAGONBALL.jpg" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label fx:id="lb_3" prefHeight="30.0" prefWidth="219.0" style="-fx-alignment: center; -fx-background-color: #0077b6; -fx-background-radius: 30;" text="DRAGONBALL" textFill="WHITE">
+                                                               <font>
+                                                                  <Font size="20.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </left>
+                                                   <center>
+                                                      <BorderPane fx:id="Border4" BorderPane.alignment="CENTER">
+                                                         <bottom>
+                                                            <ProgressBar fx:id="progress8" maxHeight="20.0" maxWidth="1000.0" prefHeight="20.0" prefWidth="42.0" progress="0.0" BorderPane.alignment="CENTER" />
+                                                         </bottom>
+                                                         <top>
+                                                            <Label fx:id="label5" prefHeight="30.0" prefWidth="104.0" text="Game Info:" textFill="WHITE" underline="true" BorderPane.alignment="CENTER">
+                                                               <font>
+                                                                  <Font size="20.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </top>
+                                                         <center>
+                                                            <Label fx:id="label7" maxHeight="1000.0" maxWidth="1000.0" prefHeight="95.0" prefWidth="0.0" style="-fx-alignment: center;" text="Thế giới 7 viên ngọc rồng lại dậy sóng mỗi khi rồng thần xuất hiện. Hành trình tìm ngọc không bao giờ dừng lại. Những trận quyết chiến nảy lửa giữa hai phe thiện và ác, giữa quá khứ và thực tại. Cùng chơi game 7 viên ngọc rồng 4 và thể hiện sức mạnh của mình đi nào!" textFill="WHITE" wrapText="true" BorderPane.alignment="CENTER" />
+                                                         </center>
+                                                         <left>
+                                                            <BorderPane fx:id="border6" prefHeight="116.0" prefWidth="13.0" BorderPane.alignment="CENTER" />
+                                                         </left>
+                                                      </BorderPane>
+                                                   </center>
+                                                </BorderPane>
+                                             </children>
+                                          </FlowPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </StackPane>
+                           </center>
+                           <right>
+                              <BorderPane prefHeight="312.0" prefWidth="312.0" BorderPane.alignment="CENTER">
+                                 <right>
+                                    <BorderPane prefHeight="312.0" prefWidth="17.0" BorderPane.alignment="CENTER" />
+                                 </right>
+                                 <center>
+                                    <BorderPane BorderPane.alignment="CENTER">
+                                       <center>
+                                          <BorderPane prefHeight="284.0" prefWidth="206.0" style="-fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: #219ebc;">
+                                             <top>
+                                                <ImageView fitHeight="132.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                                                   <image>
+                                                      <Image url="@../Image/Image_Logo.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </top>
+                                             <center>
+                                                <Label prefHeight="155.0" prefWidth="187.0" style="-fx-alignment: center;" text="GameStore where you can experience games gathered on the same application, helping you reduce stress and feel great after tiring work hours. Now download your game and enjoy it." textFill="WHITE" wrapText="true" BorderPane.alignment="CENTER">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                             </center>
+                                             <bottom>
+                                                <Label prefHeight="32.0" prefWidth="28.0" BorderPane.alignment="CENTER" />
+                                             </bottom>
+                                          </BorderPane>
+                                       </center>
+                                       <bottom>
+                                          <BorderPane prefHeight="105.0" prefWidth="206.0" BorderPane.alignment="CENTER" />
+                                       </bottom>
+                                    </BorderPane>
+                                 </center>
+                                 <left>
+                                    <BorderPane prefHeight="312.0" prefWidth="0.0" BorderPane.alignment="CENTER" />
+                                 </left>
+                              </BorderPane>
+                           </right>
+                        </BorderPane>
+                     </center>
+                  </BorderPane>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

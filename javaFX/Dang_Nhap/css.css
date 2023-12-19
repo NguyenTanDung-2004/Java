@@ -1,0 +1,53 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Dec 2, 2023, 8:28:52 PM
+    Author     : user
+*/
+VBox
+{
+    -fx-background-color: #161a1d;
+    -fx-alignment: center;
+    -fx-opacity: 1;
+}
+#VBox_textbox_Dang_Nhap
+{
+    -fx-background-color: #d9d9d9;
+    -fx-alignment: BASELINE_LEFT;
+}
+#Label_welcome
+{
+    -fx-text-fill: #e7ecef;
+    -fx-padding: 30;
+    -fx-font: Algerian;
+    -fx-font-weight: bold;
+    
+}
+#ImageView_BackGround_Dang_Nhap
+{
+    -fx-padding: 30;
+}
+#Dang_Nhap
+{
+    -fx-background-color: #d9d9d9;
+}
+TextField
+{
+    -fx-background-radius: 30;
+    -fx-background-color: #cacfd6;
+    
+}
+PasswordField
+{
+    -fx-background-radius: 30;
+    -fx-padding: 5;
+    -fx-background-color: #cacfd6;
+    
+}
+#Lable_create_a_new_Account
+{
+    -fx-font: italic bold 14pt "Arial";
+}
+

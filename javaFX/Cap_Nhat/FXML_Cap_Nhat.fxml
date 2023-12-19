@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="558.0" maxWidth="360.0" minHeight="558.0" minWidth="360.0" prefHeight="558.0" prefWidth="360.0" style="-fx-background-color: #161a1d;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gioi_Thieu_Game.Controller_Gioi_Thieu_Game">
+   <children>
+      <BorderPane layoutX="49.0" layoutY="137.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <BorderPane prefHeight="82.0" prefWidth="360.0" BorderPane.alignment="CENTER">
+                     <top>
+                        <BorderPane prefHeight="22.0" prefWidth="360.0" BorderPane.alignment="CENTER" />
+                     </top>
+                     <center>
+                        <BorderPane prefHeight="167.0" prefWidth="360.0" BorderPane.alignment="CENTER">
+                           <center>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                                 <image>
+                                    <Image url="@../Image/Image_Logo.png" />
+                                 </image>
+                              </ImageView>
+                           </center>
+                        </BorderPane>
+                     </center>
+                  </BorderPane>
+               </center>
+            </BorderPane>
+         </top>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <BorderPane layoutX="14.0" layoutY="14.0" prefHeight="96.0" prefWidth="360.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <center>
+                              <Label prefHeight="1.0" prefWidth="290.0" textFill="WHITE" wrapText="true" BorderPane.alignment="CENTER" />
+                           </center>
+                           <top>
+                              <Label prefHeight="30.0" prefWidth="211.0" style="-fx-font-weight: 900;" text="Updating your app..." textFill="WHITE" underline="true" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                           </top>
+                        </BorderPane>
+                        <BorderPane layoutX="57.0" layoutY="43.0" prefHeight="89.0" prefWidth="360.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <top>
+                              <Label style="-fx-font-weight: 900;" textFill="WHITE" underline="true" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                           </top>
+                           <center>
+                              <ProgressBar prefHeight="18.0" prefWidth="333.0" progress="0.94" BorderPane.alignment="CENTER" />
+                           </center>
+                           <bottom>
+                              <Label prefHeight="38.0" prefWidth="109.0" style="-fx-alignment: center; -fx-text-fill: #70e000;" text="Update successfully. Sign in to continue" wrapText="true" BorderPane.alignment="CENTER" />
+                           </bottom>
+                        </BorderPane>
+                        <BorderPane layoutX="63.0" layoutY="177.0" prefHeight="155.0" prefWidth="360.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <center>
+                              <BorderPane>
+                                 <center>
+                                    <Label opacity="0.59" prefHeight="134.0" prefWidth="227.0" style="-fx-alignment: center;" text="My app is a game store where you can download games to play to relax after work hard hours." textFill="WHITE" wrapText="true" />
+                                 </center>
+                                 <left>
+                                    <Label prefHeight="17.0" prefWidth="70.0" BorderPane.alignment="CENTER" />
+                                 </left>
+                                 <right>
+                                    <Label prefHeight="17.0" prefWidth="63.0" BorderPane.alignment="CENTER" />
+                                 </right>
+                                 <bottom>
+                                    <Label prefHeight="72.0" prefWidth="28.0" BorderPane.alignment="CENTER" />
+                                 </bottom>
+                              </BorderPane>
+                           </center>
+                           <top>
+                              <Label prefHeight="20.0" prefWidth="158.0" style="-fx-font-weight: 900;" text="Introduce about my app: " textFill="WHITE" underline="true" BorderPane.alignment="CENTER" />
+                           </top>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

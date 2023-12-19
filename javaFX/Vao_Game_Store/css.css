@@ -1,0 +1,29 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Dec 3, 2023, 12:09:34 AM
+    Author     : user
+*/
+#TextField_Search_Game
+{
+    -fx-text-fill: white;
+}
+#AnchorPane_Image_Changed
+{
+    -fx-background-image: url("../Image/Image_Background_Dang_Nhap.png");
+    -fx-background-size: cover;
+    -fx-background-radius: 30; 
+}
+#Label_image
+{
+    -fx-background-image: url("../Image/Image_Logo.png");
+    -fx-background-repeat: 0;
+    -fx-background-size: cover;
+    -fx-background-radius: 30;
+}
+ImageView{
+	-fx-border-color: white;
+}
+
